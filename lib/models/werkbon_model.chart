@@ -1,0 +1,26 @@
+class WerkbonModel {
+  final int id;
+  final String bestandsnaam;
+  final String status;
+  final String uploadDatum;
+
+  WerkbonModel({
+    required this.id,
+    required this.bestandsnaam,
+    required this.status,
+    required this.uploadDatum,
+  });
+
+  factory WerkbonModel.fromJson(
+    Map<String, dynamic> json,
+  ) {
+    return WerkbonModel(
+      id: int.parse(json["id"].toString()),
+      bestandsnaam:
+          json["bestandsnaam"] ?? "",
+      status: json["status"] ?? "",
+      uploadDatum:
+          json["upload_datum"] ?? "",
+    );
+  }
+}
